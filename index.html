@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Happy Birthday Mutia - Special Edition 🎉</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: rgba(255, 255, 255, 0.8);
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        .section {
+            min-height: 100vh;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px 20px;
+            position: relative;
+        }
+
+        .section.active {
+            display: flex;
+        }
+
+        /* Floating Elements */
+        .floating-hearts, .floating-stars, .floating-balloons {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart, .star, .balloon {
+            position: absolute;
+            animation: float 8s infinite linear;
+        }
+
+        .heart {
+            color: rgba(255, 182, 193, 0.8);
+            font-size: 25px;
+        }
+
+        .star {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 20px;
+        }
+
+        .balloon {
+            font-size: 30px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main Birthday Card */
+        .birthday-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 100%;
+            transform: scale(0) rotate(180deg);
+            animation: cardEntrance 2s ease-out 0.5s forwards;
+            border: 3px solid rgba(255, 182, 193, 0.6);
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes cardEntrance {
+            to {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .name {
+            font-family: 'Pacifico', cursive;
+            font-size: 5rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f093fb);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: nameAnimation 3s ease-in-out infinite, textGradient 4s ease infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes nameAnimation {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(2deg); }
+        }
+
+        @keyframes textGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .birthday-title {
+            font-size: 2.8rem;
+            color: #4a5568;
+            margin-bottom: 30px;
+            font-weight: 700;
+            animation: titlePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Interactive Cake */
+        .cake-section {
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .cake {
+            font-size: 5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: cakeBounce 2s ease-in-out infinite;
+            position: relative;
+            display: inline-block;
+        }
+
+        .cake:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        @keyframes cakeBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        .candles {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            animation: candleFlicker 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes candleFlicker {
+            0% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+            100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+        }
+
+        /* Feature Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(255, 107, 107, 0.5);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Age Calculator */
+        .age-display {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .photo-frame {
+            aspect-ratio: 1;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .photo-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .photo-frame:hover::before {
+            transform: translateX(100%);
+        }
+
+        /* Love Quiz */
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .quiz-question {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-option {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .quiz-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(45deg, #a8edea, #fed6e3);
+            color: #333;
+        }
+
+        /* Music Player */
+        .music-player {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+
+
+        /* Fireworks */
+        .firework {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: fireworkExplode 2s ease-out forwards;
+        }
+
+        @keyframes fireworkExplode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(30);
+                opacity: 0;
+            }
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .name { font-size: 3.5rem; }
+            .birthday-title { font-size: 2rem; }
+            .nav { flex-wrap: wrap; }
+            .countdown { grid-template-columns: repeat(2, 1fr); }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav">
+        <button class="nav-btn active" onclick="showSection('home')">🏠 Home</button>
+        <button class="nav-btn" onclick="showSection('features')">✨ Fitur</button>
+        <button class="nav-btn" onclick="showSection('gallery')">📸 Galeri</button>
+        <button class="nav-btn" onclick="showSection('quiz')">💕 Kuis</button>
+        <button class="nav-btn" onclick="showSection('wishes')">🎁 Harapan</button>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="floating-hearts" id="hearts"></div>
+    <div class="floating-stars" id="stars"></div>
+    <div class="floating-balloons" id="balloons"></div>
+
+    <!-- Home Section -->
+    <div class="section active" id="home">
+        <div class="birthday-card">
+            <div class="name">Mutia</div>
+            <h1 class="birthday-title">🎉 Selamat Ulang Tahun! 🎉</h1>
+            
+            <!-- Ners Education Section -->
+            <div class="ners-section">
+                <div class="ners-icon">👩‍⚕️</div>
+                <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Selamat untuk Calon Perawat Hebat!</h3>
+                <p style="font-size: 1.1rem; line-height: 1.6;">
+                    Bangga sekali melihat dirimu menjalani pendidikan Ners! 🩺✨<br>
+                    Semoga perjalanan studi dirimu lancar dan sukses menjadi perawat yang luar biasa.<br>
+                    Dirimu pasti akan menjadi malaikat bagi banyak orang! 💙
+                </p>
+            </div>
+
+            <div class="cake-section">
+                <div class="candles">🕯️🕯️🕯️</div>
+                <div class="cake" onclick="blowCandles()">🎂</div>
+                <p style="color: #666; margin-top: 15px; font-style: italic;">
+                    Klik kue untuk tiup lilin! ✨
+                </p>
+            </div>
+
+            <!-- Age Calculator -->
+            <div class="age-display" id="ageDisplay">
+                <div>🎈 Hari Spesial Mutia 🎈</div>
+                <div style="font-size: 0.9rem; margin-top: 10px; opacity: 0.9;">
+                    Semoga tahun ini membawa kebahagiaan yang tak terbatas!
+                </div>
+            </div>
+
+            <!-- Music Player -->
+            <div class="music-player">
+                <button class="play-btn" onclick="toggleBackgroundMusic()" id="musicBtn">🎵</button>
+                <div>
+                    <div style="font-weight: 600; color: #333;">🎵 Musik Latar Ulang Tahun</div>
+                    <div style="font-size: 0.9rem; color: #666;" id="musicStatus">Klik untuk memulai musik latar</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <button class="btn" onclick="createMegaFireworks()">🎆 Pesta Kembang Api</button>
+                <button class="btn btn-secondary" onclick="showLoveMessage()">💝 Pesan Cinta</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="section" id="features">
+        <div class="feature-grid">
+            <div class="feature-card" onclick="showCountdown()">
+                <div class="feature-icon">⏰</div>
+                <h3>Countdown Spesial</h3>
+                <p>Hitung mundur ke momen-momen istimewa kita</p>
+            </div>
+            
+            <div class="feature-card" onclick="generateLoveLetter()">
+                <div class="feature-icon">💌</div>
+                <h3>Surat Cinta</h3>
+                <p>Surat cinta otomatis yang dibuat khusus untukmu</p>
+            </div>
+            
+            <div class="feature-card" onclick="showMemoryGame()">
+                <div class="feature-icon">🧠</div>
+                <h3>Game Kenangan</h3>
+                <p>Permainan seru tentang kenangan kita bersama</p>
+            </div>
+            
+            <div class="feature-card" onclick="showWishMaker()">
+                <div class="feature-icon">⭐</div>
+                <h3>Pembuat Harapan</h3>
+                <p>Buat harapan dan lihat mereka menjadi kenyataan</p>
+            </div>
+            
+            <div class="feature-card" onclick="showLoveCalculator()">
+                <div class="feature-icon">💖</div>
+                <h3>Kalkulator Cinta</h3>
+                <p>Hitung tingkat kompatibilitas kita</p>
+            </div>
+            
+            <div class="feature-card" onclick="showVirtualGift()">
+                <div class="feature-icon">🎁</div>
+                <h3>Hadiah Virtual</h3>
+                <p>Buka hadiah virtual yang sudah disiapkan</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="section" id="gallery">
+        <div style="max-width: 900px; width: 100%; text-align: center;">
+            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 30px; font-family: 'Dancing Script', cursive;">
+                📸 Galeri Kenangan Kita
+            </h2>
+            
+            <div class="photo-gallery">
+                <div class="photo-frame" id="frame1" onclick="showPhotoMessage('Foto kenangan pertama yang sangat berharga')">
+                    <span id="placeholder1">📷</span>
+                </div>
+                <div class="photo-frame" id="frame2" onclick="showPhotoMessage('Momen indah yang tak terlupakan')">
+                    <span id="placeholder2">💕</span>
+                </div>
+                <div class="photo-frame" id="frame3" onclick="showPhotoMessage('Kenangan manis yang selalu diingat')">
+                    <span id="placeholder3">✨</span>
+                </div>
+            </div>
+            <p style="color: rgba(255,255,255,0.8); margin-top: 20px; font-style: italic;">
+                Klik frame untuk melihat pesan kenangan spesial! 💖
+            </p>
+        </div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="section" id="quiz">
+        <div class="quiz-container">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #667eea; font-family: 'Dancing Script', cursive; font-size: 2.5rem;">
+                💕 Kuis Cinta Untuk Mutia
+            </h2>
+            <div id="quizContent">
+                <div class="quiz-question" id="question">Apa yang paling kamu suka dari hari ini?</div>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="answerQuiz('A')">Kejutan ulang tahun yang indah</button>
+                    <button class="quiz-option" onclick="answerQuiz('B')">Waktu bersama orang terkasih</button>
+                    <button class="quiz-option" onclick="answerQuiz('C')">Semua momen bahagia hari ini</button>
+                    <button class="quiz-option" onclick="answerQuiz('D')">Perasaan dicintai dan dihargai</button>
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn" onclick="nextQuestion()">Pertanyaan Selanjutnya 💖</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishes Section -->
+    <div class="section" id="wishes">
+        <div style="max-width: 700px; width: 100%; text-align: center;">
+            <h2 style="color: white; font-size: 3rem; margin-bottom: 40px; font-family: 'Dancing Script', cursive;">
+                🌟 Harapan Terbaik Untukmu
+            </h2>
+            
+            <div style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin-bottom: 30px;">
+                <div style="font-size: 1.3rem; line-height: 1.8; color: #2d3748; margin-bottom: 30px;">
+                    <p style="margin-bottom: 20px;">
+                        🌸 Semoga setiap hari dalam hidup dirimu dipenuhi dengan kebahagiaan yang tak terbatas, 
+                        cinta yang tulus, dan mimpi-mimpi yang menjadi kenyataan.
+                    </p>
+                    <p style="margin-bottom: 20px;">
+                        ✨ Semoga dirimu selalu dikelilingi oleh orang-orang yang mencintai dirimu, 
+                        dan setiap langkah dirimu membawa berkah dan keberuntungan.
+                    </p>
+                    <p style="margin-bottom: 20px;">
+                        💖 Dirimu adalah anugerah terindah dalam hidupku, dan aku bersyukur 
+                        bisa mengenal sosok yang luar biasa seperti dirimu.
+                    </p>
+                    <p>
+                        🎂 Selamat ulang tahun, Mutia cinta! Semoga tahun ini menjadi 
+                        tahun terbaik dalam hidup dirimu! 
+                    </p>
+                </div>
+            </div>
+
+            <!-- Countdown to Next Birthday -->
+            <div style="background: rgba(255,255,255,0.9); border-radius: 20px; padding: 30px;">
+                <h3 style="color: #667eea; margin-bottom: 20px;">⏰ Countdown ke Ulang Tahun Berikutnya</h3>
+                <div class="countdown" id="nextBirthdayCountdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">365</span>
+                        <span class="countdown-label">Hari</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">0</span>
+                        <span class="countdown-label">Jam</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">0</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">0</span>
+                        <span class="countdown-label">Detik</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="birthday-background.mp3" type="audio/mpeg">
+        <source src="birthday-background.ogg" type="audio/ogg">
+        Browser Anda tidak mendukung audio.
+    </audio>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Pesan Spesial</h3>
+            <p id="modalMessage">Pesan akan muncul di sini</p>
+            <button class="btn" onclick="closeModal()">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let musicPlaying = false;
+        let currentQuizQuestion = 0;
+        let quizScore = 0;
+
+        // Quiz questions
+        const quizQuestions = [
+            {
+                question: "Apa yang paling kamu suka dari hari ini?",
+                options: ["Kejutan ulang tahun yang indah", "Waktu bersama orang terkasih", "Semua momen bahagia hari ini", "Perasaan dicintai dan dihargai"]
+            },
+            {
+                question: "Apa harapan terbesar kamu untuk tahun ini?",
+                options: ["Lebih banyak kebahagiaan", "Kesehatan dan keberuntungan", "Mimpi yang terwujud", "Cinta yang semakin dalam"]
+            },
+            {
+                question: "Momen apa yang paling berkesan menurutmu?",
+                options: ["Saat pertama kali bertemu", "Kencan romantis pertama", "Saat tertawa bersama", "Setiap detik bersama"]
+            }
+        ];
+
+        // Love messages
+        const loveMessages = [
+            "Semoga kita bisa segera bersama! 💕✨",
+            "Dirimu adalah alasan aku bangun dengan senyuman setiap pagi! 🌅💕",
+            "Terima kasih sudah menjadi cahaya dalam hidupku! ✨❤️",
+            "Setiap hari bersama dirimu adalah anugerah yang tak ternilai! 🎁💖",
+            "Dirimu membuat dunia ini menjadi tempat yang lebih indah! 🌍💝",
+            "Aku mencintai dirimu lebih dari bintang-bintang di langit! ⭐💕"
+        ];
+
+        // Initialize page
+        window.addEventListener('load', () => {
+            createFloatingElements();
+            startCountdown();
+            calculateAge();
+        });
+
+        // Navigation
+        function showSection(sectionName) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Create floating elements
+        function createFloatingElements() {
+            setInterval(() => {
+                createHeart();
+                createStar();
+                createBalloon();
+            }, 1000);
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = ['❤️', '💕', '💖', '💝'][Math.floor(Math.random() * 4)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            heart.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            document.getElementById('hearts').appendChild(heart);
+
+            setTimeout(() => heart.remove(), 10000);
+        }
+
+        function createStar() {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.innerHTML = ['⭐', '✨', '🌟'][Math.floor(Math.random() * 3)];
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.animationDelay = Math.random() * 2 + 's';
+            star.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            document.getElementById('stars').appendChild(star);
+
+            setTimeout(() => star.remove(), 10000);
+        }
+
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            balloon.innerHTML = ['🎈', '🎀', '🎊'][Math.floor(Math.random() * 3)];
+            balloon.style.left = Math.random() * 100 + 'vw';
+            balloon.style.animationDelay = Math.random() * 2 + 's';
+            balloon.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            document.getElementById('balloons').appendChild(balloon);
+
+            setTimeout(() => balloon.remove(), 10000);
+        }
+
+        // Blow candles effect
+        function blowCandles() {
+            const candles = document.querySelector('.candles');
+            candles.style.animation = 'none';
+            candles.innerHTML = '💨💨💨';
+            
+            setTimeout(() => {
+                candles.innerHTML = '🕯️🕯️🕯️';
+                candles.style.animation = 'candleFlicker 1s ease-in-out infinite alternate';
+            }, 2000);
+
+            createMegaFireworks();
+            showModal('Selamat!', 'Lilinnya sudah ditiup! Semoga semua harapanmu terkabul! 🎉✨');
+        }
+
+        // Background music toggle
+        function toggleBackgroundMusic() {
+            const btn = document.getElementById('musicBtn');
+            const audio = document.getElementById('backgroundMusic');
+            const status = document.getElementById('musicStatus');
+            
+            if (musicPlaying) {
+                btn.innerHTML = '🎵';
+                audio.pause();
+                musicPlaying = false;
+                status.textContent = 'Musik dihentikan - Klik untuk melanjutkan';
+                showModal('🎵 Musik Dihentikan', 'Musik latar telah dihentikan sementara.');
+            } else {
+                btn.innerHTML = '⏸️';
+                
+                // Set volume to comfortable level
+                audio.volume = 0.4;
+                
+                audio.play().then(() => {
+                    musicPlaying = true;
+                    status.textContent = 'Musik latar sedang diputar ♪';
+                    showModal('🎵 Musik Dimulai!', 'Musik latar ulang tahun sedang diputar untuk Mutia! 🎶');
+                }).catch(e => {
+                    console.error('Audio play error:', e);
+                    btn.innerHTML = '🎵';
+                    
+                    if (e.name === 'NotSupportedError') {
+                        status.textContent = 'File musik tidak ditemukan';
+                        showModal('❌ File Musik Tidak Ditemukan', 'Pastikan file "birthday-background.mp3" ada di folder yang sama dengan halaman ini');
+                    } else if (e.name === 'NotAllowedError') {
+                        status.textContent = 'Klik lagi untuk memutar musik';
+                        showModal('🎵 Klik Tombol Play!', 'Browser memerlukan interaksi user untuk memutar musik. Coba klik lagi!');
+                    } else {
+                        status.textContent = 'Error - Periksa file musik';
+                        showModal('❌ Error Musik', `Terjadi masalah: ${e.message}. Periksa file musik Anda.`);
+                    }
+                });
+            }
+        }
+
+
+
+        // Fireworks
+        function createMegaFireworks() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#f093fb', '#f5576c'];
+            
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    for (let j = 0; j < 5; j++) {
+                        const firework = document.createElement('div');
+                        firework.className = 'firework';
+                        firework.style.background = colors[Math.floor(Math.random() * colors.length)];
+                        firework.style.left = Math.random() * window.innerWidth + 'px';
+                        firework.style.top = Math.random() * window.innerHeight + 'px';
+                        document.body.appendChild(firework);
+
+                        setTimeout(() => firework.remove(), 2000);
+                    }
+                }, i * 200);
+            }
+        }
+
+        // Love message
+        function showLoveMessage() {
+            const message = loveMessages[Math.floor(Math.random() * loveMessages.length)];
+            showModal('💕 Pesan Cinta Spesial', message);
+            createMegaFireworks();
+        }
+
+        // Quiz functions
+        function answerQuiz(answer) {
+            quizScore++;
+            const responses = [
+                "Jawaban yang cinta! 💕",
+                "Dirimu selalu tahu cara membuat hari menjadi spesial! ✨",
+                "Itulah yang aku suka dari dirimu! 💖"
+            ];
+            showModal('Jawaban Benar!', responses[Math.floor(Math.random() * responses.length)]);
+        }
+
+        function nextQuestion() {
+            currentQuizQuestion++;
+            if (currentQuizQuestion < quizQuestions.length) {
+                const quiz = quizQuestions[currentQuizQuestion];
+                document.getElementById('question').textContent = quiz.question;
+                const options = document.querySelectorAll('.quiz-option');
+                options.forEach((option, index) => {
+                    option.textContent = quiz.options[index];
+                });
+            } else {
+                document.getElementById('quizContent').innerHTML = `
+                    <div style="text-align: center;">
+                        <h3 style="color: #667eea; margin-bottom: 20px;">🎉 Kuis Selesai!</h3>
+                        <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                            Dirimu menjawab ${quizScore} pertanyaan dengan penuh cinta! 💕
+                        </p>
+                        <p style="color: #666;">
+                            Setiap jawaban menunjukkan betapa spesialnya dirimu! ✨
+                        </p>
+                        <button class="btn" onclick="resetQuiz()">Mulai Lagi</button>
+                    </div>
+                `;
+            }
+        }
+
+        function resetQuiz() {
+            currentQuizQuestion = 0;
+            quizScore = 0;
+            const quiz = quizQuestions[0];
+            document.getElementById('quizContent').innerHTML = `
+                <div class="quiz-question" id="question">${quiz.question}</div>
+                <div class="quiz-options">
+                    <button class="quiz-option" onclick="answerQuiz('A')">${quiz.options[0]}</button>
+                    <button class="quiz-option" onclick="answerQuiz('B')">${quiz.options[1]}</button>
+                    <button class="quiz-option" onclick="answerQuiz('C')">${quiz.options[2]}</button>
+                    <button class="quiz-option" onclick="answerQuiz('D')">${quiz.options[3]}</button>
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn" onclick="nextQuestion()">Pertanyaan Selanjutnya 💖</button>
+                </div>
+            `;
+        }
+
+        // Feature functions
+        function showCountdown() {
+            showModal('⏰ Countdown Spesial', 'Setiap detik bersama dirimu adalah anugerah! Mari hitung mundur ke momen-momen indah berikutnya! 💕');
+        }
+
+        function generateLoveLetter() {
+            const letters = [
+                "Mutia cinta, dirimu adalah matahari dalam hidupku yang menerangi setiap hari dengan kehangatan cinta. Selamat ulang tahun! 🌞💕",
+                "Untuk Mutia tercinta, setiap momen bersama dirimu adalah hadiah terindah. Semoga hari spesial dirimu dipenuhi kebahagiaan! 🎁❤️",
+                "Mutia, dirimu membuat dunia ini menjadi tempat yang lebih indah hanya dengan kehadiran dirimu. Selamat ulang tahun, cinta! 🌍💖",
+                "Bangga melihat dirimu menjalani pendidikan Ners! Dirimu akan menjadi perawat yang luar biasa dan menyembuhkan banyak hati. 👩‍⚕️💙",
+                "Semoga perjalanan studi dirimu lancar dan sukses! Aku yakin dirimu akan menjadi malaikat penolong bagi banyak orang. 🩺✨"
+            ];
+            const letter = letters[Math.floor(Math.random() * letters.length)];
+            showModal('💌 Surat Cinta Untukmu', letter);
+        }
+
+        function showMemoryGame() {
+            showModal('🧠 Game Kenangan', 'Setiap kenangan bersama adalah harta karun yang tak ternilai! Mari kita buat lebih banyak kenangan indah! 💎✨');
+        }
+
+        function showWishMaker() {
+            showModal('⭐ Pembuat Harapan', 'Tutup mata, buat harapan, dan percayalah bahwa semua impianmu akan menjadi kenyataan! 🌟💫');
+        }
+
+        function showLoveCalculator() {
+            const compatibility = Math.floor(Math.random() * 20) + 80; // 80-100%
+            showModal('💖 Kalkulator Cinta', `Tingkat kompatibilitas kita: ${compatibility}%! Cinta sejati tidak bisa diukur dengan angka, tapi kita sempurna bersama! 💕`);
+        }
+
+        function showVirtualGift() {
+            const gifts = ['💍', '🌹', '🎁', '💎', '🧸', '🍰'];
+            const gift = gifts[Math.floor(Math.random() * gifts.length)];
+            showModal('🎁 Hadiah Virtual', `Ini hadiah spesial untuk dirimu: ${gift} Semoga membawa kebahagiaan di hari istimewa dirimu! ✨`);
+        }
+
+        // Photo gallery
+        function showPhotoMessage(message) {
+            showModal('📸 Kenangan Indah', message + ' - Setiap momen bersama dirimu adalah foto terindah dalam album hidupku! 💕');
+        }
+
+        // Age calculator
+        function calculateAge() {
+            // This is a demo - in real implementation, you'd use actual birthdate
+            const today = new Date();
+            const ageDisplay = document.getElementById('ageDisplay');
+            ageDisplay.innerHTML = `
+                <div>🎈 Hari Spesial Mutia 🎈</div>
+                <div style="font-size: 0.9rem; margin-top: 10px; opacity: 0.9;">
+                    Semoga tahun ini membawa kebahagiaan yang tak terbatas!
+                </div>
+            `;
+        }
+
+        // Countdown to next birthday
+        function startCountdown() {
+            setInterval(() => {
+                const now = new Date().getTime();
+                const nextBirthday = new Date(2026, 7, 19).getTime(); // August 19, 2026 (month is 0-indexed)
+                
+                const distance = nextBirthday - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            }, 1000);
+        }
+
+        // Modal functions
+        function showModal(title, message) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalMessage').textContent = message;
+            document.getElementById('modal').style.display = 'flex';
+            setTimeout(() => {
+                document.getElementById('modal').classList.add('show');
+            }, 10);
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('show');
+            setTimeout(() => {
+                document.getElementById('modal').style.display = 'none';
+            }, 300);
+        }
+
+        // Click outside modal to close
+        document.getElementById('modal').addEventListener('click', (e) => {
+            if (e.target.id === 'modal') {
+                closeModal();
+            }
+        });
+
+        // Add some interactive effects
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('birthday-card') || e.target.closest('.birthday-card')) {
+                // Create ripple effect
+                const ripple = document.createElement('div');
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 182, 193, 0.6)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.left = e.clientX + 'px';
+                ripple.style.top = e.clientY + 'px';
+                ripple.style.width = ripple.style.height = '20px';
+                ripple.style.marginLeft = ripple.style.marginTop = '-10px';
+                ripple.style.pointerEvents = 'none';
+                
+                document.body.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            }
+        });
+
+
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'971ad7a85402fd22',t:'MTc1NTYxOTAwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
