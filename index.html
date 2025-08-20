@@ -427,6 +427,8 @@
             transform: scale(1.1);
         }
 
+
+
         /* Fireworks */
         .firework {
             position: absolute;
@@ -512,9 +514,9 @@
                 <div class="ners-icon">👩‍⚕️</div>
                 <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Selamat untuk Calon Perawat Hebat!</h3>
                 <p style="font-size: 1.1rem; line-height: 1.6;">
-                    Bangga sekali melihatmu menjalani pendidikan Ners! 🩺✨<br>
-                    Semoga perjalanan studimu lancar dan sukses menjadi perawat yang luar biasa.<br>
-                    Kamu pasti akan menjadi malaikat bagi banyak orang! 💙
+                    Bangga sekali melihat dirimu menjalani pendidikan Ners! 🩺✨<br>
+                    Semoga perjalanan studi dirimu lancar dan sukses menjadi perawat yang luar biasa.<br>
+                    Dirimu pasti akan menjadi malaikat bagi banyak orang! 💙
                 </p>
             </div>
 
@@ -546,7 +548,6 @@
             <div style="margin-top: 30px;">
                 <button class="btn" onclick="createMegaFireworks()">🎆 Pesta Kembang Api</button>
                 <button class="btn btn-secondary" onclick="showLoveMessage()">💝 Pesan Cinta</button>
-                <button class="btn" onclick="testMusic()" style="background: linear-gradient(45deg, #ff9500, #ffcd3c);">🔧 Test Musik</button>
             </div>
         </div>
     </div>
@@ -647,20 +648,20 @@
             <div style="background: rgba(255,255,255,0.95); border-radius: 20px; padding: 40px; margin-bottom: 30px;">
                 <div style="font-size: 1.3rem; line-height: 1.8; color: #2d3748; margin-bottom: 30px;">
                     <p style="margin-bottom: 20px;">
-                        🌸 Semoga setiap hari dalam hidupmu dipenuhi dengan kebahagiaan yang tak terbatas, 
+                        🌸 Semoga setiap hari dalam hidup dirimu dipenuhi dengan kebahagiaan yang tak terbatas, 
                         cinta yang tulus, dan mimpi-mimpi yang menjadi kenyataan.
                     </p>
                     <p style="margin-bottom: 20px;">
-                        ✨ Semoga kamu selalu dikelilingi oleh orang-orang yang mencintaimu, 
-                        dan setiap langkahmu membawa berkah dan keberuntungan.
+                        ✨ Semoga dirimu selalu dikelilingi oleh orang-orang yang mencintai dirimu, 
+                        dan setiap langkah dirimu membawa berkah dan keberuntungan.
                     </p>
                     <p style="margin-bottom: 20px;">
-                        💖 Kamu adalah anugerah terindah dalam hidupku, dan aku bersyukur 
+                        💖 Dirimu adalah anugerah terindah dalam hidupku, dan aku bersyukur 
                         bisa mengenal sosok yang luar biasa seperti dirimu.
                     </p>
                     <p>
                         🎂 Selamat ulang tahun, Mutia cinta! Semoga tahun ini menjadi 
-                        tahun terbaik dalam hidupmu! 
+                        tahun terbaik dalam hidup dirimu! 
                     </p>
                 </div>
             </div>
@@ -690,7 +691,9 @@
         </div>
     </div>
 
-    <!-- Audio Element - Satu File Musik Backsound -->
+
+
+    <!-- Audio Element -->
     <audio id="backgroundMusic" loop preload="auto">
         <source src="music/birthday-background.mp3" type="audio/mpeg">
         <source src="music/birthday-background.mp3" type="audio/ogg">
@@ -731,11 +734,11 @@
         // Love messages
         const loveMessages = [
             "Semoga kita bisa segera bersama! 💕✨",
-            "Kamu adalah alasan aku bangun dengan senyuman setiap pagi! 🌅💕",
+            "Dirimu adalah alasan aku bangun dengan senyuman setiap pagi! 🌅💕",
             "Terima kasih sudah menjadi cahaya dalam hidupku! ✨❤️",
-            "Setiap hari bersamamu adalah anugerah yang tak ternilai! 🎁💖",
-            "Kamu membuat dunia ini menjadi tempat yang lebih indah! 🌍💝",
-            "Aku mencintaimu lebih dari bintang-bintang di langit! ⭐💕"
+            "Setiap hari bersama dirimu adalah anugerah yang tak ternilai! 🎁💖",
+            "Dirimu membuat dunia ini menjadi tempat yang lebih indah! 🌍💝",
+            "Aku mencintai dirimu lebih dari bintang-bintang di langit! ⭐💕"
         ];
 
         // Initialize page
@@ -830,11 +833,6 @@
             const audio = document.getElementById('backgroundMusic');
             const status = document.getElementById('musicStatus');
             
-            // Debug: Check if elements exist
-            console.log('Button:', btn);
-            console.log('Audio:', audio);
-            console.log('Audio src:', audio ? audio.src : 'Audio not found');
-            
             if (musicPlaying) {
                 btn.innerHTML = '🎵';
                 audio.pause();
@@ -847,9 +845,6 @@
                 // Set volume to comfortable level
                 audio.volume = 0.4;
                 
-                // Check if audio file exists
-                audio.load(); // Reload audio element
-                
                 audio.play().then(() => {
                     musicPlaying = true;
                     status.textContent = 'Musik latar sedang diputar ♪';
@@ -858,10 +853,9 @@
                     console.error('Audio play error:', e);
                     btn.innerHTML = '🎵';
                     
-                    // Check different possible issues
                     if (e.name === 'NotSupportedError') {
                         status.textContent = 'File musik tidak ditemukan';
-                        showModal('❌ File Musik Tidak Ditemukan', 'Pastikan file "birthday-background.mp3" ada di folder "music/"');
+                        showModal('❌ File Musik Tidak Ditemukan', 'Pastikan file "birthday-background.mp3" ada di folder yang sama dengan halaman ini');
                     } else if (e.name === 'NotAllowedError') {
                         status.textContent = 'Klik lagi untuk memutar musik';
                         showModal('🎵 Klik Tombol Play!', 'Browser memerlukan interaksi user untuk memutar musik. Coba klik lagi!');
@@ -872,6 +866,8 @@
                 });
             }
         }
+
+
 
         // Fireworks
         function createMegaFireworks() {
@@ -904,8 +900,8 @@
         function answerQuiz(answer) {
             quizScore++;
             const responses = [
-                "Jawaban yang manis! 💕",
-                "Kamu selalu tahu cara membuat hari menjadi spesial! ✨",
+                "Jawaban yang cinta! 💕",
+                "Dirimu selalu tahu cara membuat hari menjadi spesial! ✨",
                 "Itulah yang aku suka dari dirimu! 💖"
             ];
             showModal('Jawaban Benar!', responses[Math.floor(Math.random() * responses.length)]);
@@ -925,7 +921,7 @@
                     <div style="text-align: center;">
                         <h3 style="color: #667eea; margin-bottom: 20px;">🎉 Kuis Selesai!</h3>
                         <p style="font-size: 1.2rem; margin-bottom: 20px;">
-                            Kamu menjawab ${quizScore} pertanyaan dengan penuh cinta! 💕
+                            Dirimu menjawab ${quizScore} pertanyaan dengan penuh cinta! 💕
                         </p>
                         <p style="color: #666;">
                             Setiap jawaban menunjukkan betapa spesialnya dirimu! ✨
@@ -956,16 +952,16 @@
 
         // Feature functions
         function showCountdown() {
-            showModal('⏰ Countdown Spesial', 'Setiap detik bersamamu adalah anugerah! Mari hitung mundur ke momen-momen indah berikutnya! 💕');
+            showModal('⏰ Countdown Spesial', 'Setiap detik bersama dirimu adalah anugerah! Mari hitung mundur ke momen-momen indah berikutnya! 💕');
         }
 
         function generateLoveLetter() {
             const letters = [
-                "Mutia cinta, kamu adalah matahari dalam hidupku yang menerangi setiap hari dengan kehangatan cinta. Selamat ulang tahun! 🌞💕",
-                "Untuk Mutia tercinta, setiap momen bersamamu adalah hadiah terindah. Semoga hari spesialmu dipenuhi kebahagiaan! 🎁❤️",
-                "Mutia, kamu membuat dunia ini menjadi tempat yang lebih indah hanya dengan kehadiranmu. Selamat ulang tahun, cinta! 🌍💖",
-                "Bangga melihatmu menjalani pendidikan Ners! Kamu akan menjadi perawat yang luar biasa dan menyembuhkan banyak hati. 👩‍⚕️💙",
-                "Semoga perjalanan studimu lancar dan sukses! Aku yakin kamu akan menjadi malaikat penolong bagi banyak orang. 🩺✨"
+                "Mutia cinta, dirimu adalah matahari dalam hidupku yang menerangi setiap hari dengan kehangatan cinta. Selamat ulang tahun! 🌞💕",
+                "Untuk Mutia tercinta, setiap momen bersama dirimu adalah hadiah terindah. Semoga hari spesial dirimu dipenuhi kebahagiaan! 🎁❤️",
+                "Mutia, dirimu membuat dunia ini menjadi tempat yang lebih indah hanya dengan kehadiran dirimu. Selamat ulang tahun, cinta! 🌍💖",
+                "Bangga melihat dirimu menjalani pendidikan Ners! Dirimu akan menjadi perawat yang luar biasa dan menyembuhkan banyak hati. 👩‍⚕️💙",
+                "Semoga perjalanan studi dirimu lancar dan sukses! Aku yakin dirimu akan menjadi malaikat penolong bagi banyak orang. 🩺✨"
             ];
             const letter = letters[Math.floor(Math.random() * letters.length)];
             showModal('💌 Surat Cinta Untukmu', letter);
@@ -987,12 +983,12 @@
         function showVirtualGift() {
             const gifts = ['💍', '🌹', '🎁', '💎', '🧸', '🍰'];
             const gift = gifts[Math.floor(Math.random() * gifts.length)];
-            showModal('🎁 Hadiah Virtual', `Ini hadiah spesial untukmu: ${gift} Semoga membawa kebahagiaan di hari istimewamu! ✨`);
+            showModal('🎁 Hadiah Virtual', `Ini hadiah spesial untuk dirimu: ${gift} Semoga membawa kebahagiaan di hari istimewa dirimu! ✨`);
         }
 
         // Photo gallery
         function showPhotoMessage(message) {
-            showModal('📸 Kenangan Indah', message + ' - Setiap momen bersamamu adalah foto terindah dalam album hidupku! 💕');
+            showModal('📸 Kenangan Indah', message + ' - Setiap momen bersama dirimu adalah foto terindah dalam album hidupku! 💕');
         }
 
         // Age calculator
@@ -1073,48 +1069,7 @@
             }
         });
 
-        // Test music function
-        function testMusic() {
-            const audio = document.getElementById('backgroundMusic');
-            
-            let message = '🔧 Hasil Test Musik:\n\n';
-            
-            // Check if audio element exists
-            if (!audio) {
-                message += '❌ Element audio tidak ditemukan\n';
-            } else {
-                message += '✅ Element audio ditemukan\n';
-                
-                // Check source
-                const sources = audio.querySelectorAll('source');
-                message += `📁 Jumlah source: ${sources.length}\n`;
-                
-                sources.forEach((source, index) => {
-                    message += `${index + 1}. ${source.src}\n`;
-                });
-                
-                // Check if can play
-                if (audio.canPlayType('audio/mpeg')) {
-                    message += '✅ Browser mendukung MP3\n';
-                } else {
-                    message += '❌ Browser tidak mendukung MP3\n';
-                }
-                
-                // Check ready state
-                message += `📊 Ready State: ${audio.readyState}\n`;
-                message += `🔊 Volume: ${audio.volume}\n`;
-                message += `⏸️ Paused: ${audio.paused}\n`;
-            }
-            
-            // Check folder structure
-            message += '\n📂 Pastikan struktur folder:\n';
-            message += 'Birthday-Mutia/\n';
-            message += '├── index.html\n';
-            message += '└── music/\n';
-            message += '    └── birthday-background.mp3';
-            
-            showModal('🔧 Test Musik', message);
-        }
+
 
         // Add ripple animation
         const style = document.createElement('style');
@@ -1128,5 +1083,5 @@
         `;
         document.head.appendChild(style);
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'971fbe77b7d444c5',t:'MTc1NTY3MDM5OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9720e5db12edfd73',t:'MTc1NTY4MjQ5OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
